@@ -24,8 +24,8 @@ func is_cell_vacant(old_position=Vector2(), direction=Vector2()):
     return false
 
 
-func update_child_position(child, new_position, direction):
-    var cell = world_to_map(new_position)
+func update_child_position(child, old_position, direction):
+    var cell = world_to_map(old_position)
     grid[cell.x][cell.y] = null
     
     var new_cell = cell + direction
