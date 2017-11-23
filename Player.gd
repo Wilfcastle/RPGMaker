@@ -27,6 +27,7 @@ func _physics_process(delta):
         direction.x = 1
 
     if not is_moving and direction != Vector2():
+        get_node('AnimatedSprite').face_direction(direction)
         target_direction = direction
         if grid.is_cell_vacant(get_position(), direction):
             target_position = grid.update_child_position(self, get_position(), direction)
